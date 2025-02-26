@@ -9,7 +9,7 @@
         <table class="table table-bordered">
             @foreach (session('judgment', []) as $key => $value)
                 <tr>
-                    <th>{{ ucfirst(str_replace('_', ' ', $key)) }}</th>
+                    <th>{{ __('labels.' . $key) }}</th>
                     <td>{{ $value }}</td>
                 </tr>
             @endforeach
@@ -19,7 +19,7 @@
         <table class="table table-bordered">
             @foreach (session('form', []) as $key => $value)
                 <tr>
-                    <th>{{ ucfirst(str_replace('_', ' ', $key)) }}</th>
+                    <th>{{ __('labels.' . $key) }}</th>
                     <td>{{ $value }}</td>
                 </tr>
             @endforeach
