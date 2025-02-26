@@ -6,30 +6,43 @@
         <p>以下の内容で問題がなければ「送信」ボタンを押してください。</p>
 
         <h3 class="text-primary">判定フォームの入力内容</h3>
-        <table class="table table-bordered">
-            @foreach (session('judgment', []) as $key => $value)
-                <tr>
-                    <th>{{ __('labels.' . $key) }}</th>
-                    <td>{{ $value }}</td>
-                </tr>
-            @endforeach
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                @foreach (session('judgment', []) as $key => $value)
+                    @if (!str_contains($key, 'labels'))
+                        <tr>
+                            <th>{{ __('labels.' . $key) }}</th>
+                            <td>{{ $value }}</td>
+                        </tr>
+                    @endif
+                @endforeach
+            </table>
+        </div>
+
 
         <h3 class="text-success">情報入力フォームの入力内容</h3>
-        <table class="table table-bordered">
-            @foreach (session('form', []) as $key => $value)
-                <tr>
-                    <th>{{ __('labels.' . $key) }}</th>
-                    <td>{{ $value }}</td>
-                </tr>
-            @endforeach
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                @foreach (session('form', []) as $key => $value)
+                    @if (!str_contains($key, 'labels'))
+                        {{-- labels_ で始まるキーを除外 --}}
+                        <tr>
+                            <th>{{ __('labels.' . $key) }}</th>
+                            <td>{{ $value }}</td>
+                        </tr>
+                    @endif
+                @endforeach
+            </table>
+        </div>
+
 
         <h3 class="text-warning">同意フォーム</h3>
         @php
             $consent = session('consent', []);
         @endphp
-        <p>個人情報取扱いの同意及び合意: <strong>{{ isset($consent['consent']) && $consent['consent'] == 1 ? '同意及び合意済み' : '未同意及び未合意' }}</strong></p>
+        <p>個人情報取扱いの同意及び合意:
+            <strong>{{ isset($consent['consent']) && $consent['consent'] == 1 ? '同意及び合意済み' : '未同意及び未合意' }}</strong>
+        </p>
 
         <form action="{{ route('confirmation.submitFinal') }}" method="POST">
             @csrf

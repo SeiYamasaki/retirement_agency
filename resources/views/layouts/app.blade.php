@@ -39,6 +39,65 @@
             text-align: center;
             margin: auto;
         }
+
+        /* 📌 テーブルデザインの調整 */
+        .table-bordered {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+            /* デフォルトではカラム幅を自動調整 */
+        }
+
+        /* 📌 th, td の基本デザイン */
+        .table-bordered th,
+        .table-bordered td {
+            padding: 8px;
+            font-size: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+            white-space: nowrap;
+            /* デフォルトでは折り返しなし */
+        }
+
+        /* 📌 スマホ対応（画面幅に収める） */
+        @media (max-width: 768px) {
+            .table-responsive {
+                overflow-x: auto;
+                /* 横スクロールを許可 */
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .table-bordered {
+                table-layout: auto;
+                /* スマホではカラム幅を自動調整 */
+                width: 100%;
+            }
+
+            .table-bordered th,
+            .table-bordered td {
+                white-space: normal;
+                /* スマホでは折り返す */
+                word-wrap: break-word;
+            }
+
+            /* 📌 スマホでは `th` を上、`td` を下に配置 */
+            .table-bordered tbody tr {
+                display: flex;
+                flex-direction: column;
+                padding: 5px;
+            }
+
+            .table-bordered th {
+                background-color: #f8f9fa;
+                font-weight: bold;
+                text-align: left;
+                padding-top: 10px;
+            }
+
+            .table-bordered td {
+                padding-bottom: 10px;
+            }
+        }
     </style>
 </head>
 
