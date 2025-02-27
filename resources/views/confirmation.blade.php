@@ -52,6 +52,13 @@
                 <a href="{{ route('consent.show') }}" class="btn btn-secondary">同意内容を修正</a>
                 <button type="submit" class="btn btn-primary">送信</button>
             </div>
+            <div class="mt-5">
+                <h3 class="text-success">自動生成されたPDF</h3>
+                <ul>
+                    <li><a href="{{ url('storage/送達文フォーマット.pdf') }}" target="_blank">送達文フォーマット.pdf</a></li>
+                    <li><a href="{{ url('storage/退職届フォーマット.pdf') }}" target="_blank">退職届フォーマット.pdf</a></li>
+                </ul>
+            </div>
         </form>
     </div>
 @endsection
