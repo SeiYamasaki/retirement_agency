@@ -1,0 +1,1 @@
+convert /home/laravel/camp/100_laravel/retirement_agency/storage/app/templates/送達文フォーマット.docx as a Writer document -> /home/laravel/camp/100_laravel/retirement_agency/storage/app/public/送達文フォーマット.pdf using filter : writer_pdf_Export

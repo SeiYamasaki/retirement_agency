@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\JudgmentController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ConsentController;
@@ -17,12 +18,15 @@ Route::post('/form', [FormController::class, 'submit'])->name('form.submit');
 // 同意フォーム
 Route::get('/consent', [ConsentController::class, 'show'])->name('consent.show');
 Route::post('/consent', [ConsentController::class, 'submit'])->name('consent.submit');
+Route::get('/consent/confirm', [ConsentController::class, 'confirm'])->name('consent.confirm');
 
 // 確認画面
-Route::get('/confirmation', [ConfirmationController::class, 'show'])->name('confirmation.show'); // ← GET ルート追加
-Route::post('/confirmation', [ConfirmationController::class, 'show']); // POST も許可
+Route::get('/confirmation', [ConfirmationController::class, 'show'])->name('confirmation.show');
+Route::post('/confirmation', [ConfirmationController::class, 'submit'])->name('confirmation.submit');
 Route::post('/submit-final', [ConfirmationController::class, 'submitFinal'])->name('confirmation.submitFinal');
-Route::get('/consent/confirm', [ConsentController::class, 'confirm'])->name('consent.confirm');
+
+// PDF生成
+Route::get('/generate-pdf', [ConfirmationController::class, 'generatePdf'])->name('confirmation.generatePdf');
 
 // 拒否ページ
 Route::get('/denied', function () {
