@@ -44,7 +44,7 @@
             </div>
 
             <div class="mt-5">
-                <h3 class="text-success">自動生成されたPDFをダウンロード</h3>
+                <h3 class="text-success">自動生成されたPDF確認</h3>
                 <ul>
                     <li><a href="{{ asset('storage/送達文フォーマット.pdf') }}" target="_blank">送達文フォーマット.pdf</a></li>
                     <li><a href="{{ asset('storage/退職届フォーマット.pdf') }}" target="_blank">退職届フォーマット.pdf</a></li>
