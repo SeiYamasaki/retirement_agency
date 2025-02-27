@@ -327,7 +327,7 @@
                 <img id="preview_employment_contract" src="" alt="プレビュー"
                     style="display:none; max-width: 100%; margin-top: 10px;">
 
-                <button type="button" class="btn btn-success mt-2 capture-btn" id="capture_employment_contract"
+                <button type="button" class="btn btn-secondary" id="capture_employment_contract"
                     style="display:none;" onclick="captureImage('employment_contract')">📸 撮影</button>
                 <button type="button" class="btn btn-danger mt-2 reset-btn" id="reset_employment_contract"
                     style="display:none;" onclick="resetImage('employment_contract')">🔄 やり直す</button>
@@ -348,7 +348,7 @@
                 <img id="preview_id_proof" src="" alt="プレビュー"
                     style="display:none; max-width: 100%; margin-top: 10px;">
 
-                <button type="button" class="btn btn-success mt-2 capture-btn" id="capture_id_proof"
+                <button type="button" class="btn btn-secondary" id="capture_id_proof"
                     style="display:none;" onclick="captureImage('id_proof')">📸 撮影</button>
                 <button type="button" class="btn btn-danger mt-2 reset-btn" id="reset_id_proof" style="display:none;"
                     onclick="resetImage('id_proof')">🔄 やり直す</button>
