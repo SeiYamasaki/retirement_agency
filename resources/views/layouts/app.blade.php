@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <style>
+        /* 🌿 ページ背景 */
         body {
             background-color: #e6ffe6;
-            /* 背景を薄い緑 */
+            /* 薄い緑 */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -18,6 +19,7 @@
             margin: 0;
         }
 
+        /* 📌 コンテンツエリア */
         .container {
             background: white;
             padding: 20px;
@@ -27,17 +29,15 @@
             width: 100%;
         }
 
-        /* ナビゲーションバー中央寄せ */
+        /* 📌 ナビゲーションバーの中央寄せ */
         .navbar {
             width: 100%;
-            justify-content: center;
         }
 
         .navbar-brand {
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: center;
-            margin: auto;
         }
 
         /* 📌 テーブルデザインの調整 */
@@ -45,57 +45,109 @@
             width: 100%;
             border-collapse: collapse;
             table-layout: auto;
-            /* デフォルトではカラム幅を自動調整 */
         }
 
         /* 📌 th, td の基本デザイン */
         .table-bordered th,
         .table-bordered td {
-            padding: 8px;
-            font-size: 15px;
-            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #bbb;
+            /* 境界線を少し濃く */
             text-align: left;
             white-space: nowrap;
-            /* デフォルトでは折り返しなし */
         }
 
-        /* 📌 スマホ対応（画面幅に収める） */
+        /* 📌 ホバー時の背景変更 */
+        .table-bordered tbody tr:hover {
+            background-color: #f1f8ff;
+            transition: background-color 0.3s;
+        }
+
+        /* 📌 ボタンデザイン（PC & スマホ 共通） */
+        .btn {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin:2px;
+        }
+
+        /* 🌈 カラフルな修正ボタン */
+        .btn-secondary {
+            background: linear-gradient(45deg, #ff6b6b, #ffcc5c, #4ecdc4, #556270);
+            background-size: 300% 300%;
+            color: white;
+            animation: gradientMove 6s infinite linear;
+        }
+
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
+        }
+
+        /* 💙 送信ボタン（目立たせる） */
+        .btn-primary {
+            background: linear-gradient(45deg, #ff3cac, #784ba0, #2b86c5);
+            background-size: 300% 300%;
+            color: white;
+            animation: gradientMove 6s infinite linear;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            filter: brightness(1.2);
+        }
+
+        /* 🌈 グラデーションアニメーション */
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* 📌 スマホ対応（画面幅に収める & レスポンシブ調整） */
         @media (max-width: 768px) {
             .table-responsive {
                 overflow-x: auto;
-                /* 横スクロールを許可 */
                 -webkit-overflow-scrolling: touch;
             }
 
             .table-bordered {
-                table-layout: auto;
-                /* スマホではカラム幅を自動調整 */
                 width: 100%;
             }
 
             .table-bordered th,
             .table-bordered td {
                 white-space: normal;
-                /* スマホでは折り返す */
                 word-wrap: break-word;
             }
 
-            /* 📌 スマホでは `th` を上、`td` を下に配置 */
+            /* th, td を縦並びに */
             .table-bordered tbody tr {
                 display: flex;
                 flex-direction: column;
-                padding: 5px;
             }
 
-            .table-bordered th {
-                background-color: #f8f9fa;
-                font-weight: bold;
-                text-align: left;
-                padding-top: 10px;
-            }
-
-            .table-bordered td {
-                padding-bottom: 10px;
+            /* 📌 スマホ用のボタン調整（少し小さくする） */
+            .btn {
+                font-size: 16px;
+                padding: 10px 20px;
             }
         }
     </style>
